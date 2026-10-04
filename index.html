@@ -113,31 +113,32 @@
     .nav-links a:focus-visible { color: var(--teal); }
 
     .page-shell {
-      width: min(var(--max-width), calc(100% - 2.5rem));
-      margin: 0 auto;
-      padding: 3.5rem 0 5rem;
-      display: grid;
-      grid-template-columns: 230px minmax(0, 1fr);
-      gap: clamp(3rem, 7vw, 6.5rem);
-      align-items: start;
+  width: min(var(--max-width), calc(100% - 2.5rem));
+  margin: 0 auto;
+  padding: 3.5rem 0 5rem;
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: clamp(3rem, 7vw, 6.5rem);
+  align-items: start;
     }
 
+    
     .profile {
       position: sticky;
       top: 104px;
     }
 
-    .institution-logos {
-  width: 230px;
+.institution-logos {
+  width: 300px;
   margin: 0 0 1.35rem;
   display: grid;
-  grid-template-columns: 60px 60px minmax(0, 1fr);
-  gap: 0.55rem;
+  grid-template-columns: 82px 82px minmax(0, 1fr);
+  gap: 0.65rem;
   align-items: center;
 }
 
 .institution-logo {
-  height: 60px;
+  height: 82px;
   display: grid;
   place-items: center;
   color: inherit;
@@ -145,8 +146,8 @@
 }
 
 .emblem-frame {
-  width: 60px;
-  height: 60px;
+  width: 82px;
+  height: 82px;
   display: block;
   overflow: hidden;
   border-radius: 50%;
@@ -155,15 +156,15 @@
 
 .institution-logo--sjtu img,
 .institution-logo--pku img {
-  width: 60px;
-  height: 60px;
+  width: 82px;
+  height: 82px;
   display: block;
   object-fit: contain;
 }
 
 .institution-logo--mines {
   position: relative;
-  height: 60px;
+  height: 82px;
   overflow: hidden;
 }
 
@@ -171,11 +172,13 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 132px;
+  width: 170px;
   height: auto;
   display: block;
   transform: translate(-50%, -50%);
 }
+    
+    
     .profile h2 {
       margin: 0 0 0.3rem;
       color: var(--navy);
@@ -455,7 +458,7 @@
       .profile {
         position: static;
         display: grid;
-        grid-template-columns: 230px minmax(0, 1fr);
+        grid-template-columns: 300px minmax(0, 1fr);
         gap: 1.5rem;
         align-items: start;
         padding-bottom: 2.25rem;
@@ -509,11 +512,10 @@
 
       .profile {
         grid-template-columns: 1fr;
-        gap: 1.15rem;
       }
 
       .institution-logos {
-        width: min(100%, 230px);
+        width: min(100%, 300px);
         justify-self: start;
       }
 
