@@ -1,0 +1,660 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Kaiwei Wu is a Ph.D. student in solid mechanics at Peking University, working on multiscale mechanics, coupled multiphysics, and computational materials science.">
+  <meta name="author" content="Kaiwei Wu">
+  <meta property="og:title" content="Kaiwei Wu | Solid Mechanics">
+  <meta property="og:description" content="Academic homepage of Kaiwei Wu, Ph.D. student in solid mechanics at Peking University.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#102f4f">
+  <title>Kaiwei Wu | Solid Mechanics</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23102f4f'/%3E%3Cpath d='M16 14v36h7V36l17 14h10L29 32l20-18h-9L23 29V14z' fill='%23ffffff'/%3E%3C/svg%3E">
+
+  <style>
+    :root {
+      color-scheme: light;
+      --navy: #102f4f;
+      --teal: #167274;
+      --ink: #263342;
+      --muted: #65717e;
+      --line: #e3e8ed;
+      --soft: #f5f8fa;
+      --white: #ffffff;
+      --max-width: 1120px;
+      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --serif: Georgia, "Times New Roman", serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 92px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--white);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 1rem;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--teal);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.2em;
+    }
+
+    a:hover,
+    a:focus-visible { color: var(--navy); }
+
+    .skip-link {
+      position: fixed;
+      top: 0.75rem;
+      left: 0.75rem;
+      z-index: 100;
+      padding: 0.65rem 0.9rem;
+      background: var(--navy);
+      color: #fff;
+      transform: translateY(-150%);
+    }
+
+    .skip-link:focus { transform: translateY(0); }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-inner {
+      width: min(var(--max-width), calc(100% - 2.5rem));
+      min-height: 68px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .brand {
+      color: var(--navy);
+      font-size: 1.02rem;
+      font-weight: 750;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.7rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #56616d;
+      font-size: 0.92rem;
+      font-weight: 550;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible { color: var(--teal); }
+
+    .page-shell {
+      width: min(var(--max-width), calc(100% - 2.5rem));
+      margin: 0 auto;
+      padding: 3.5rem 0 5rem;
+      display: grid;
+      grid-template-columns: 230px minmax(0, 1fr);
+      gap: clamp(3rem, 7vw, 6.5rem);
+      align-items: start;
+    }
+
+    .profile {
+      position: sticky;
+      top: 104px;
+    }
+
+    .monogram {
+      width: 148px;
+      height: 148px;
+      margin-bottom: 1.35rem;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--navy);
+      color: #fff;
+      font-family: var(--serif);
+      font-size: 3rem;
+      letter-spacing: -0.08em;
+      box-shadow: inset 0 -6px 0 var(--teal);
+    }
+
+    .profile h2 {
+      margin: 0 0 0.3rem;
+      color: var(--navy);
+      font-size: 1.25rem;
+      line-height: 1.35;
+    }
+
+    .profile-role {
+      margin: 0 0 1.35rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.55;
+    }
+
+    .profile-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .profile-list li {
+      position: relative;
+      margin-bottom: 0.62rem;
+      padding-left: 1.15rem;
+      color: #4d5966;
+      font-size: 0.9rem;
+      line-height: 1.45;
+    }
+
+    .profile-list li::before {
+      position: absolute;
+      top: 0.58em;
+      left: 0;
+      width: 0.42rem;
+      height: 0.42rem;
+      border-radius: 50%;
+      background: var(--teal);
+      content: "";
+    }
+
+    .profile-list a { overflow-wrap: anywhere; }
+
+    main { min-width: 0; }
+
+    .intro { padding-bottom: 2.4rem; }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      margin-bottom: 1.25rem;
+      color: var(--navy);
+      font-size: clamp(2.25rem, 4.4vw, 3.4rem);
+      font-weight: 720;
+      letter-spacing: -0.035em;
+      line-height: 1.1;
+    }
+
+    .lead {
+      margin-bottom: 1.15rem;
+      color: #374655;
+      font-size: 1.08rem;
+      line-height: 1.8;
+    }
+
+    .intro p:last-child { margin-bottom: 0; }
+
+    .content-section {
+      padding: 2.3rem 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .content-section h2 {
+      margin-bottom: 1.4rem;
+      color: var(--navy);
+      font-size: 1.45rem;
+      font-weight: 720;
+      line-height: 1.35;
+    }
+
+    .content-section h3 {
+      margin-bottom: 0.2rem;
+      color: #27394a;
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .research-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.65rem 2rem;
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+
+    .research-list li { padding-left: 0.2rem; }
+
+    .research-note {
+      margin: 1.25rem 0 0;
+      color: var(--muted);
+    }
+
+    .entry-list {
+      display: grid;
+      gap: 1.55rem;
+    }
+
+    .entry {
+      display: grid;
+      grid-template-columns: 142px minmax(0, 1fr);
+      gap: 1.25rem;
+    }
+
+    .entry time,
+    .entry .date {
+      padding-top: 0.08rem;
+      color: var(--teal);
+      font-size: 0.84rem;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .entry p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.55;
+    }
+
+    .publication-list {
+      margin: 0;
+      padding-left: 1.35rem;
+    }
+
+    .publication-list li {
+      margin-bottom: 1.35rem;
+      padding-left: 0.35rem;
+    }
+
+    .publication-list li:last-child { margin-bottom: 0; }
+
+    .publication-list p {
+      margin-bottom: 0.2rem;
+      line-height: 1.68;
+    }
+
+    .publication-meta {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .publication-link {
+      margin-left: 0.3rem;
+      font-size: 0.84rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .activity-list,
+    .honors-list {
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+
+    .activity-list li,
+    .honors-list li {
+      margin-bottom: 0.6rem;
+      padding-left: 0.2rem;
+    }
+
+    .subsection { margin-top: 1.8rem; }
+
+    .subsection:first-of-type { margin-top: 0; }
+
+    .subsection h3 {
+      margin-bottom: 0.75rem;
+      color: var(--navy);
+      font-size: 1.05rem;
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .skill-group {
+      padding-top: 0.9rem;
+      border-top: 2px solid var(--teal);
+    }
+
+    .skill-group h3 {
+      margin-bottom: 0.4rem;
+      color: var(--navy);
+      font-size: 0.94rem;
+    }
+
+    .skill-group p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .site-footer {
+      border-top: 1px solid var(--line);
+      background: var(--soft);
+    }
+
+    .footer-inner {
+      width: min(var(--max-width), calc(100% - 2.5rem));
+      margin: 0 auto;
+      padding: 1.5rem 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .footer-inner p { margin: 0; }
+
+    :focus-visible {
+      outline: 3px solid rgba(22, 114, 116, 0.35);
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 860px) {
+      .page-shell {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .profile {
+        position: static;
+        display: grid;
+        grid-template-columns: 122px minmax(0, 1fr);
+        gap: 1.5rem;
+        align-items: start;
+        padding-bottom: 2.25rem;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .monogram {
+        width: 122px;
+        height: 122px;
+        margin: 0;
+        font-size: 2.4rem;
+      }
+
+      .profile-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.15rem 1.25rem;
+      }
+
+      .intro { padding-top: 0; }
+    }
+
+    @media (max-width: 680px) {
+      html { scroll-padding-top: 120px; }
+
+      .nav-inner {
+        width: min(var(--max-width), calc(100% - 2rem));
+        min-height: auto;
+        padding: 0.85rem 0 0.7rem;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.55rem;
+      }
+
+      .nav-links {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 0.3rem 1.15rem;
+        overflow: visible;
+        padding-bottom: 0.15rem;
+      }
+
+      .nav-links a {
+        font-size: 0.86rem;
+        white-space: nowrap;
+      }
+
+      .page-shell,
+      .footer-inner {
+        width: min(var(--max-width), calc(100% - 2rem));
+      }
+
+      .page-shell { padding-top: 2.3rem; }
+
+      .profile {
+        grid-template-columns: 96px minmax(0, 1fr);
+        gap: 1.15rem;
+      }
+
+      .monogram {
+        width: 96px;
+        height: 96px;
+        font-size: 1.95rem;
+      }
+
+      .profile h2 { font-size: 1.1rem; }
+
+      .profile-role {
+        margin-bottom: 1rem;
+        font-size: 0.88rem;
+      }
+
+      .profile-list { grid-column: 1 / -1; }
+
+      .research-list,
+      .skills { grid-template-columns: 1fr; }
+
+      .entry {
+        grid-template-columns: 1fr;
+        gap: 0.22rem;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+
+    @media print {
+      .site-header { display: none; }
+
+      .page-shell {
+        width: 100%;
+        grid-template-columns: 180px minmax(0, 1fr);
+        gap: 2.5rem;
+        padding: 0;
+      }
+
+      .profile { position: static; }
+      .monogram { box-shadow: none; }
+
+      .content-section,
+      .entry,
+      .publication-list li { break-inside: avoid; }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <nav class="nav-inner" aria-label="Primary navigation">
+      <a class="brand" href="#about">Kaiwei Wu</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="page-shell">
+    <aside class="profile" aria-label="Profile">
+      <div class="monogram" aria-hidden="true">KW</div>
+      <div>
+        <h2>Kaiwei Wu</h2>
+        <p class="profile-role">Ph.D. Student in Solid Mechanics<br>Department of Mechanics</p>
+        <ul class="profile-list">
+          <li>Beijing, China</li>
+          <li>Peking University</li>
+          <li><a href="mailto:wukaiwei26@stu.pku.edu.cn">Email</a></li>
+          <li><a href="https://yzhang951.github.io/" target="_blank" rel="noopener noreferrer">Research Group</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <main id="main-content">
+      <section class="intro" id="about">
+        <h1>Kaiwei Wu</h1>
+        <p class="lead">
+          I am a Ph.D. student in solid mechanics at Peking University, supervised by Prof. Yin Zhang.
+          My research investigates the multiscale mechanics of materials under coupled multiphysics loading.
+        </p>
+        <p>
+          I combine continuum and crystal-plasticity modeling, phase-field methods, experiments, and
+          machine-learning interatomic potentials to study interface mechanics, phase transformations,
+          nanotwinning, and dislocation structures.
+        </p>
+      </section>
+
+      <section class="content-section" id="research">
+        <h2>Research Interests</h2>
+        <ul class="research-list">
+          <li>Multiscale mechanics of materials</li>
+          <li>Coupled-field material behavior</li>
+          <li>Interface mechanics in solids</li>
+          <li>Phase transformations and nanotwinning</li>
+          <li>Dislocation cell evolution</li>
+          <li>Generalized continuum theories</li>
+          <li>Crystal plasticity modeling</li>
+          <li>Machine-learning interatomic potentials</li>
+        </ul>
+        <p class="research-note">
+          My current work connects microscopic mechanisms to macroscopic response through theory,
+          computation, and experiment.
+        </p>
+      </section>
+
+      <section class="content-section" id="publications">
+        <h2>Selected Publications</h2>
+        <ol class="publication-list">
+          <li>
+            <p><strong>Wu, K.</strong>, Sun, X., Liu, B. et al. “A Multiscale Investigation into the Electroplastic Effects in Copper: Experiments and Crystal Plasticity Modeling.”</p>
+            <p class="publication-meta"><em>Journal of the Mechanics and Physics of Solids</em>, 212, 106597 (2026). <a class="publication-link" href="https://doi.org/10.1016/j.jmps.2026.106597" target="_blank" rel="noopener noreferrer">DOI</a></p>
+          </li>
+          <li>
+            <p><strong>Wu, K.</strong>, Ma, S., Fang, X. et al. “Microstructure and Mechanical Properties of an In-situ TiB2 Particle Reinforced AlSi10Mg Composite Additive Manufactured by Selective Electron Beam Melting.”</p>
+            <p class="publication-meta"><em>Journal of Materials Science</em>, 58, 7915–7929 (2023). <a class="publication-link" href="https://doi.org/10.1007/s10853-023-08516-1" target="_blank" rel="noopener noreferrer">DOI</a></p>
+          </li>
+          <li>
+            <p>Zhou, L., <strong>Wu, K.</strong>, Liu, H., Gao, Y., and Gao, X. “CIRD-F: Spread and Influence of COVID-19 in China.” <span class="publication-meta">Co-first author.</span></p>
+            <p class="publication-meta"><em>Journal of Shanghai Jiaotong University (Science)</em>, 25, 147–156 (2020). <a class="publication-link" href="https://doi.org/10.1007/s12204-020-2168-1" target="_blank" rel="noopener noreferrer">DOI</a></p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="content-section" id="experience">
+        <h2>Research &amp; Industry Experience</h2>
+        <div class="entry-list">
+          <article class="entry">
+            <time datetime="2026-04">Apr–Jul 2026</time>
+            <div><h3>Software Engineering Intern</h3><p><a href="https://www.bochu.com/" target="_blank" rel="noopener noreferrer">Shanghai Friendess Technology Co., Ltd.</a> · Shanghai, China</p></div>
+          </article>
+          <article class="entry">
+            <time datetime="2024-05">May–Sep 2024</time>
+            <div><h3>Experimental Mechanics Intern</h3><p>Hutchinson, a TotalEnergies company · Châlette-sur-Loing, France</p></div>
+          </article>
+          <article class="entry">
+            <time datetime="2023-12">Dec 2023–Mar 2024</time>
+            <div><h3>Research Intern</h3><p>Centre des Matériaux (UMR 7633), CNRS / Mines Paris – PSL · France</p></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section" id="education">
+        <h2>Education</h2>
+        <div class="entry-list">
+          <article class="entry">
+            <span class="date">2026–Present</span>
+            <div><h3>Peking University</h3><p>Ph.D. Student in Solid Mechanics · Supervisor: Prof. Yin Zhang</p></div>
+          </article>
+          <article class="entry">
+            <span class="date">2025–2026</span>
+            <div><h3>Shanghai Jiao Tong University</h3><p>M.S. in Mechanical Engineering · Supervisor: Prof. Qiwei Shi</p></div>
+          </article>
+          <article class="entry">
+            <span class="date">2023–2025</span>
+            <div><h3>Mines Paris – PSL</h3><p>Diplôme d’Ingénieur (equivalent to M.S.) in Civil Engineering</p></div>
+          </article>
+          <article class="entry">
+            <span class="date">2019–2023</span>
+            <div><h3>Shanghai Jiao Tong University</h3><p>B.S. in Mechanical Engineering · Graduated with distinction</p></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section" id="activities">
+        <h2>Academic Activities &amp; Honors</h2>
+        <div class="subsection">
+          <h3>Academic Activities</h3>
+          <ul class="activity-list">
+            <li><a href="https://esmc2025.sciencesconf.org/" target="_blank" rel="noopener noreferrer">European Solid Mechanics Conference 2025</a>, Lyon, France</li>
+            <li>Academic visit to the University of Pennsylvania, Department of Mechanical Engineering and Applied Mechanics, December 2023</li>
+            <li>Conference contribution at the Alloys for Additive Manufacturing Symposium 2024</li>
+          </ul>
+        </div>
+        <div class="subsection">
+          <h3>Selected Honors</h3>
+          <ul class="honors-list">
+            <li>Graduate Student Academic Scholarship, SJTU (2025–2026)</li>
+            <li>Chinese Government Scholarship (2023–2025)</li>
+            <li>Tuition-waiver Scholarship, Mines Paris – PSL (2023)</li>
+            <li>Nomination for Prestigious Bachelor’s Dissertation, top 1.5% (2023)</li>
+            <li>Academic Excellence Scholarship, SJTU, top 10% (2020–2022)</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="content-section" id="skills">
+        <h2>Skills</h2>
+        <div class="skills">
+          <div class="skill-group"><h3>Computational</h3><p>C++, MATLAB, Python, LaTeX, crystal plasticity, DeePMD-kit</p></div>
+          <div class="skill-group"><h3>Experimental</h3><p>SEM, EBSD, wide-temperature testing, coupled-field experimental mechanics</p></div>
+          <div class="skill-group"><h3>Languages</h3><p>Mandarin (native), English (TOEFL iBT 104/120), French (CEFR B2)</p></div>
+        </div>
+      </section>
+
+      <section class="content-section" id="contact">
+        <h2>Contact</h2>
+        <p>For research discussions or collaboration, please contact me at <a href="mailto:wukaiwei26@stu.pku.edu.cn">wukaiwei26@stu.pku.edu.cn</a>.</p>
+      </section>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>Copyright © 2026 Kaiwei Wu. All rights reserved.</p>
+      <p>Last updated August 2026</p>
+    </div>
+  </footer>
+</body>
+</html>
