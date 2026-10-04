@@ -127,19 +127,60 @@
       top: 104px;
     }
 
-    .monogram {
-      width: 148px;
-      height: 148px;
-      margin-bottom: 1.35rem;
+    .institution-logos {
+      width: 230px;
+      margin: 0 0 1.35rem;
+      display: grid;
+      grid-template-columns: 60px 60px minmax(0, 1fr);
+      gap: 0.55rem;
+      align-items: center;
+    }
+
+    .institution-logo {
+      min-height: 0;
+      height: 60px;
       display: grid;
       place-items: center;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .institution-logo:hover,
+    .institution-logo:focus-visible { opacity: 0.8; }
+
+    .institution-logo--mines {
+      position: relative;
+      min-height: 0;
+      height: 60px;
+      overflow: hidden;
+    }
+
+    .emblem-frame {
+      position: relative;
+      width: 60px;
+      height: 60px;
+      display: block;
+      overflow: hidden;
       border-radius: 50%;
-      background: var(--navy);
-      color: #fff;
-      font-family: var(--serif);
-      font-size: 3rem;
-      letter-spacing: -0.08em;
-      box-shadow: inset 0 -6px 0 var(--teal);
+      background: #fff;
+    }
+
+    .institution-logo--sjtu img,
+    .institution-logo--pku img {
+      width: 60px;
+      height: 60px;
+      display: block;
+      object-fit: contain;
+    }
+
+    .institution-logo--mines img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 132px;
+      height: auto;
+      display: block;
+      transform: translate(-50%, -50%);
     }
 
     .profile h2 {
@@ -188,6 +229,20 @@
 
     .intro { padding-bottom: 2.4rem; }
 
+    .profile-photo {
+      width: 165px;
+      margin: 1.2rem 0 0;
+      border-bottom: 3px solid var(--teal);
+    }
+
+    .profile-photo img {
+      width: 100%;
+      height: 206px;
+      display: block;
+      object-fit: cover;
+      object-position: 50% 42%;
+    }
+
     h1, h2, h3, p { margin-top: 0; }
 
     h1 {
@@ -204,6 +259,9 @@
       color: #374655;
       font-size: 1.08rem;
       line-height: 1.8;
+      text-align: justify;
+      text-justify: inter-word;
+      hyphens: auto;
     }
 
     .intro p:last-child { margin-bottom: 0; }
@@ -270,6 +328,30 @@
       font-size: 0.94rem;
       line-height: 1.55;
     }
+
+    .experience-mark {
+      min-height: 32px;
+      margin-top: 0.65rem;
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .experience-mark:hover,
+    .experience-mark:focus-visible { opacity: 0.76; }
+
+    .experience-mark img {
+      width: auto;
+      max-width: 220px;
+      max-height: 30px;
+      display: block;
+      object-fit: contain;
+      object-position: left center;
+    }
+
+    .experience-mark--bochu img { height: 30px; }
+    .experience-mark--hutchinson img { height: 23px; }
+    .experience-mark--cdm img { height: 28px; }
 
     .publication-list {
       margin: 0;
@@ -377,18 +459,15 @@
       .profile {
         position: static;
         display: grid;
-        grid-template-columns: 122px minmax(0, 1fr);
+        grid-template-columns: 230px minmax(0, 1fr);
         gap: 1.5rem;
         align-items: start;
         padding-bottom: 2.25rem;
         border-bottom: 1px solid var(--line);
       }
 
-      .monogram {
-        width: 122px;
-        height: 122px;
+      .institution-logos {
         margin: 0;
-        font-size: 2.4rem;
       }
 
       .profile-list {
@@ -433,14 +512,13 @@
       .page-shell { padding-top: 2.3rem; }
 
       .profile {
-        grid-template-columns: 96px minmax(0, 1fr);
+        grid-template-columns: 1fr;
         gap: 1.15rem;
       }
 
-      .monogram {
-        width: 96px;
-        height: 96px;
-        font-size: 1.95rem;
+      .institution-logos {
+        width: min(100%, 230px);
+        justify-self: start;
       }
 
       .profile h2 { font-size: 1.1rem; }
@@ -451,6 +529,13 @@
       }
 
       .profile-list { grid-column: 1 / -1; }
+
+      .profile-photo {
+        width: min(100%, 150px);
+        margin: 1rem 0 0;
+      }
+
+      .profile-photo img { height: 188px; }
 
       .research-list,
       .skills { grid-template-columns: 1fr; }
@@ -481,7 +566,6 @@
       }
 
       .profile { position: static; }
-      .monogram { box-shadow: none; }
 
       .content-section,
       .entry,
@@ -509,7 +593,17 @@
 
   <div class="page-shell">
     <aside class="profile" aria-label="Profile">
-      <div class="monogram" aria-hidden="true">KW</div>
+      <div class="institution-logos" aria-label="Academic institutions">
+        <a class="institution-logo institution-logo--sjtu" href="https://www.sjtu.edu.cn/" target="_blank" rel="noopener noreferrer" aria-label="Shanghai Jiao Tong University">
+          <span class="emblem-frame"><img src="assets/sjtu-emblem.png" alt="" width="240" height="240"></span>
+        </a>
+        <a class="institution-logo institution-logo--pku" href="https://www.pku.edu.cn/" target="_blank" rel="noopener noreferrer" aria-label="Peking University">
+          <span class="emblem-frame"><img src="assets/pku-emblem.png" alt="" width="360" height="360"></span>
+        </a>
+        <a class="institution-logo institution-logo--mines" href="https://www.minesparis.psl.eu/" target="_blank" rel="noopener noreferrer" aria-label="Mines Paris – PSL">
+          <img src="assets/mines-paris-psl-logo.png" alt="" width="1767" height="1091">
+        </a>
+      </div>
       <div>
         <h2>Kaiwei Wu</h2>
         <p class="profile-role">Ph.D. Student in Solid Mechanics<br>Department of Mechanics</p>
@@ -520,19 +614,23 @@
           <li><a href="https://yzhang951.github.io/" target="_blank" rel="noopener noreferrer">Affiliated Research Group</a></li>
         </ul>
       </div>
+      <figure class="profile-photo">
+        <img src="assets/kaiwei-wu.jpg" alt="Portrait of Kaiwei Wu" width="684" height="742">
+      </figure>
     </aside>
 
     <main id="main-content">
       <section class="intro" id="about">
         <h1>Kaiwei Wu</h1>
         <p class="lead">
-          I am a Ph.D. student in solid mechanics at Peking University, advised by Prof. Yin Zhang. 
-          Over the past several years, I have been fortunate to explore fundamental questions in the multiscale mechanics of materials. 
-          My research combines continuum and crystal-plasticity modeling under coupled-field conditions with experimental observations. 
-          My current work focuses on shape-memory alloys, aiming to characterize the energy landscapes associated with reversible martensitic transformations
-          , and bridge atomistic and continuum-scale simulations by developing suitable free-energy functions for phase-field models informed by DeepMD calculations. 
-          Taken together, these approaches aim to address several fundamental challenges in phase-transformation theory
-          , including the identification of crystallographically equivalent lattice states suggested by phase-transformation graphs and the lack of clear physical interpretations for parameters in conventional Landau-type free-energy formulations.        </p>
+          I am a Ph.D. student in solid mechanics at Peking University, advised by Prof. Yin Zhang.
+          Over the past several years, I have been fortunate to explore fundamental questions in the multiscale mechanics of materials.
+          My research combines continuum and crystal-plasticity modeling under coupled-field conditions with experimental observations.
+          My current work focuses on shape-memory alloys, aiming to characterize the energy landscapes associated with reversible martensitic transformations,
+          and bridge atomistic and continuum-scale simulations by developing suitable free-energy functions for phase-field models informed by DeepMD calculations.
+          Taken together, these approaches aim to address several fundamental challenges in phase-transformation theory,
+          including the identification of crystallographically equivalent lattice states suggested by phase-transformation graphs and the lack of clear physical interpretations for parameters in conventional Landau-type free-energy formulations.
+        </p>
       </section>
 
       <section class="content-section" id="research">
@@ -542,6 +640,10 @@
           <li>Coupled-field Material Behavior</li>
           <li>Interdisciplinary Science Related to Mechanics</li>
         </ul>
+        <p class="research-note">
+          My current work connects microscopic mechanisms to macroscopic response through theory,
+          computation, and experiment.
+        </p>
       </section>
 
       <section class="content-section" id="publications">
@@ -619,15 +721,33 @@
         <div class="entry-list">
           <article class="entry">
             <time datetime="2026-04">Apr–Jul 2026</time>
-            <div><h3>Software Engineering Intern</h3><p><a href="https://www.bochu.com/" target="_blank" rel="noopener noreferrer">Shanghai Friendess Technology Co., Ltd.</a> · Shanghai, China</p></div>
+            <div>
+              <h3>Software Engineering Intern</h3>
+              <p><a href="https://www.bochu.com/" target="_blank" rel="noopener noreferrer">Shanghai Friendess Technology Co., Ltd. (BOCHU)</a> · Shanghai, China</p>
+              <a class="experience-mark experience-mark--bochu" href="https://www.bochu.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit BOCHU">
+                <img src="assets/bochu-logo.svg" alt="BOCHU" width="198" height="48">
+              </a>
+            </div>
           </article>
           <article class="entry">
             <time datetime="2024-05">May–Sep 2024</time>
-            <div><h3>Experimental Mechanics Intern</h3><p>Hutchinson, a TotalEnergies company · Châlette-sur-Loing, France</p></div>
+            <div>
+              <h3>Experimental Mechanics Intern</h3>
+              <p><a href="https://www.hutchinson.com/" target="_blank" rel="noopener noreferrer">Hutchinson</a>, a <a href="https://totalenergies.com/" target="_blank" rel="noopener noreferrer">TotalEnergies</a> company · Châlette-sur-Loing, France</p>
+              <a class="experience-mark experience-mark--hutchinson" href="https://www.hutchinson.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Hutchinson">
+                <img src="assets/hutchinson-logo.svg" alt="Hutchinson" width="204" height="26">
+              </a>
+            </div>
           </article>
           <article class="entry">
             <time datetime="2023-12">Dec 2023–Mar 2024</time>
-            <div><h3>Research Intern</h3><p>Centre des Matériaux (UMR 7633), CNRS / Mines Paris – PSL · France</p></div>
+            <div>
+              <h3>Research Intern</h3>
+              <p><a href="https://www.minesparis.psl.eu/cmat/" target="_blank" rel="noopener noreferrer">Centre des Matériaux (UMR 7633)</a>, CNRS / Mines Paris – PSL · France</p>
+              <a class="experience-mark experience-mark--cdm" href="https://www.minesparis.psl.eu/cmat/" target="_blank" rel="noopener noreferrer" aria-label="Visit Centre des Matériaux">
+                <img src="assets/cdm-logo.png" alt="Centre des Matériaux" width="1024" height="143">
+              </a>
+            </div>
           </article>
         </div>
       </section>
@@ -690,14 +810,16 @@
         </a>,
         Lyon, France
       </li>
+
       <li>
-        Conference contribution at the Alloys for Additive
-        Manufacturing Symposium 2024
-      </li>
-            <li>
         Academic visit to the University of Pennsylvania,
         Department of Mechanical Engineering and Applied Mechanics,
         December 2023
+      </li>
+
+      <li>
+        Conference contribution at the Alloys for Additive
+        Manufacturing Symposium 2024
       </li>
     </ul>
   </div>
