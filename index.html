@@ -16,7 +16,7 @@
     :root {
       color-scheme: light;
       --navy: #102f4f;
-      --teal: #167274;
+      --teal: #167274; 
       --ink: #263342;
       --muted: #65717e;
       --line: #e3e8ed;
@@ -117,7 +117,7 @@
       margin: 0 auto;
       padding: 3.5rem 0 5rem;
       display: grid;
-      grid-template-columns: 270px minmax(0, 1fr);
+      grid-template-columns: 250px minmax(0, 1fr);
       gap: clamp(3rem, 7vw, 6.5rem);
       align-items: start;
     }
@@ -128,7 +128,7 @@
     }
 
     .institution-logos {
-      width: 270px;
+      width: 250px;
       margin: 0 0 1.35rem;
       display: grid;
       grid-template-columns: 76px 76px;
@@ -237,14 +237,14 @@
     .intro { padding-bottom: 2.4rem; }
 
     .profile-photo {
-      width: 190px;
+      width: 176px;
       margin: 1.2rem 0 0;
       border-bottom: 3px solid var(--teal);
     }
 
     .profile-photo img {
       width: 100%;
-      height: 250px;
+      height: 232px;
       display: block;
       object-fit: cover;
       object-position: 50% 42%;
@@ -309,6 +309,36 @@
       color: var(--muted);
     }
 
+    .topic-list {
+      display: grid;
+      gap: 1.9rem;
+    }
+
+    .topic {
+      display: grid;
+      gap: 0.85rem;
+    }
+
+    .topic img {
+      width: 100%;
+      max-height: 300px;
+      display: block;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: var(--soft);
+      object-fit: cover;
+    }
+
+    .topic h3 { margin-bottom: 0.35rem; }
+
+    .topic p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.6;
+      text-align: justify;
+    }
+
     .entry-list {
       display: grid;
       gap: 1.55rem;
@@ -370,6 +400,16 @@
       max-height: 40px;
     }
     .experience-mark--cdm img { height: 34px; }
+
+    .experience-map {
+      margin: 2.4rem 0 0;
+    }
+
+    .experience-map img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
 
     .publication-list {
       margin: 0;
@@ -477,7 +517,7 @@
       .profile {
         position: static;
         display: grid;
-        grid-template-columns: 270px minmax(0, 1fr);
+        grid-template-columns: 250px minmax(0, 1fr);
         gap: 1.5rem;
         align-items: start;
         padding-bottom: 2.25rem;
@@ -535,7 +575,7 @@
       }
 
       .institution-logos {
-        width: min(100%, 270px);
+        width: min(100%, 250px);
         justify-self: start;
       }
 
@@ -600,10 +640,10 @@
       <a class="brand" href="#about">Kaiwei Wu</a>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
         <li><a href="#research">Research</a></li>
         <li><a href="#publications">Publications</a></li>
         <li><a href="#experience">Experience</a></li>
-        <li><a href="#education">Education</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -612,10 +652,10 @@
   <div class="page-shell">
     <aside class="profile" aria-label="Profile">
       <div class="institution-logos" aria-label="Academic institutions">
-        <a class="institution-logo institution-logo--sjtu" href="https://www.sjtu.edu.cn/" target="_blank" rel="noopener noreferrer" aria-label="Shanghai Jiao Tong University">
+        <a class="institution-logo institution-logo--sjtu" href="https://en.sjtu.edu.cn/" target="_blank" rel="noopener noreferrer" aria-label="Shanghai Jiao Tong University">
           <span class="emblem-frame"><img src="assets/sjtu-emblem.png" alt="" width="240" height="240"></span>
         </a>
-        <a class="institution-logo institution-logo--pku" href="https://www.pku.edu.cn/" target="_blank" rel="noopener noreferrer" aria-label="Peking University">
+        <a class="institution-logo institution-logo--pku" href="https://english.pku.edu.cn/" target="_blank" rel="noopener noreferrer" aria-label="Peking University">
           <span class="emblem-frame"><img src="assets/pku-emblem.png" alt="" width="360" height="360"></span>
         </a>
         <a class="institution-logo institution-logo--mines" href="https://www.minesparis.psl.eu/" target="_blank" rel="noopener noreferrer" aria-label="Mines Paris – PSL">
@@ -650,17 +690,60 @@
         </p>
       </section>
 
+      <section class="content-section" id="education">
+        <h2>Education</h2>
+        <div class="entry-list">
+          <article class="entry">
+            <span class="date">2026–Present</span>
+            <div><h3>Peking University</h3><p>Ph.D. Student in Solid Mechanics · Supervisor: Prof. Yin Zhang</p></div>
+          </article>
+          <article class="entry">
+            <span class="date">2025–2026</span>
+            <div><h3>Shanghai Jiao Tong University</h3><p>M.S. in Mechanical Engineering · Supervisor: Prof. Qiwei Shi</p></div>
+          </article>
+          <article class="entry">
+            <span class="date">2023–2025</span>
+            <div><h3>Mines Paris – PSL</h3><p>Diplôme d’Ingénieur (equivalent to M.S.) in Civil Engineering</p></div>
+          </article>
+          <article class="entry">
+            <span class="date">2019–2023</span>
+            <div><h3>Shanghai Jiao Tong University</h3><p>B.S. in Mechanical Engineering · Graduated with distinction</p></div>
+          </article>
+        </div>
+      </section>
+
       <section class="content-section" id="research">
         <h2>Research Interests</h2>
-        <ul class="research-list">
-          <li>Multiscale Mechanics of Materials</li>
-          <li>Coupled-field Material Behavior</li>
-          <li>Interdisciplinary Science Related to Mechanics</li>
-        </ul>
-        <p class="research-note">
-          My current work connects microscopic mechanisms to macroscopic response through theory,
-          computation, and experiment.
-        </p>
+        <div class="topic-list">
+          <article class="topic">
+            <div>
+              <h3>Multiscale Mechanics of Materials</h3>
+              <p>Bridging atomistic and continuum-scale simulations by developing suitable free-energy functions for phase-field models informed by DeepMD calculations.</p>
+            </div>
+            <img src="assets/research-multiscale.jpg" alt="Illustration of multiscale mechanics of materials" width="640" height="400">
+          </article>
+          <article class="topic">
+            <div>
+              <h3>Coupled-field Material Behavior</h3>
+              <p>Combining continuum and crystal-plasticity modeling with experimental observations to understand material response under coupled-field conditions, such as the electroplastic effect in metals.</p>
+            </div>
+            <img src="assets/research-coupled-field.jpg" alt="Illustration of coupled-field material behavior" width="640" height="400">
+          </article>
+          <article class="topic">
+            <div>
+              <h3>Atomistic Modeling</h3>
+              <p>Employing atomistic simulations and machine-learned interatomic potentials to reveal the microscopic mechanisms underlying phase transformations and deformation.</p>
+            </div>
+            <img src="assets/research-atomistic.jpg" alt="Illustration of atomistic modeling" width="640" height="400">
+          </article>
+          <article class="topic">
+            <div>
+              <h3>Phase Transformations in Shape-Memory Alloys</h3>
+              <p>Characterizing the energy landscapes associated with reversible martensitic transformations, and addressing fundamental challenges in phase-transformation theory.</p>
+            </div>
+            <img src="assets/research-shape-memory.jpg" alt="Illustration of phase transformations in shape-memory alloys" width="640" height="400">
+          </article>
+        </div>
       </section>
 
       <section class="content-section" id="publications">
@@ -734,8 +817,48 @@
 </section>      
 
       <section class="content-section" id="experience">
-        <h2>Research &amp; Industry Experience</h2>
-        <div class="entry-list">
+        <h2>Experience</h2>
+        <div class="subsection">
+          <h3>Research Experience</h3>
+          <div class="entry-list">
+          <article class="entry">
+            <time datetime="2026-09">Sep 2026–Present</time>
+            <div>
+              <h3>Doctoral Student Reasearch</h3>
+              <p><a href="https://english.pku.edu.cn/" target="_blank" rel="noopener noreferrer">School of Mechanics and Engineering Science</a>, Peking University · Beijing, China</p>
+            </div>
+          </article>
+          <article class="entry">
+            <time datetime="2023-12">Dec 2023–Mar 2024</time>
+            <div>
+              <h3>Research Intern</h3>
+              <p><a href="https://www.minesparis.psl.eu/cmat/" target="_blank" rel="noopener noreferrer">Centre des Matériaux (UMR 7633)</a>, CNRS / Mines Paris – PSL · France</p>
+              <div class="experience-marks">
+                <a class="experience-mark experience-mark--cdm" href="https://www.minesparis.psl.eu/cmat/" target="_blank" rel="noopener noreferrer" aria-label="Visit Centre des Matériaux">
+                  <img src="assets/cdm-logo.png" alt="Centre des Matériaux" width="1024" height="143">
+                </a>
+              </div>
+            </div>
+          </article>
+          <article class="entry">
+            <time datetime="2022-04">Apr 2022–Feb 2023</time>
+            <div>
+              <h3>Research Assistant</h3>
+              <p><a href="https://en.smse.sjtu.edu.cn/" target="_blank" rel="noopener noreferrer">School of Materials Science and Engineering</a>, Shanghai Jiao Tong University · Shanghai, China</p>
+            </div>
+          </article>
+          <article class="entry">
+            <time datetime="2022-07">Jul–Dec 2022</time>
+            <div>
+              <h3>Research Assistant</h3>
+              <p><a href="https://www.physics.sjtu.edu.cn/en/" target="_blank" rel="noopener noreferrer">Department of Physics and Astronomy</a>, Shanghai Jiao Tong University · Shanghai, China</p>
+            </div>
+          </article>
+        </div>
+        </div>
+        <div class="subsection">
+          <h3>Industrial Experience</h3>
+          <div class="entry-list">
           <article class="entry">
             <time datetime="2026-04">Apr–Jul 2026</time>
             <div>
@@ -763,41 +886,11 @@
               </div>
             </div>
           </article>
-          <article class="entry">
-            <time datetime="2023-12">Dec 2023–Mar 2024</time>
-            <div>
-              <h3>Research Intern</h3>
-              <p><a href="https://www.minesparis.psl.eu/cmat/" target="_blank" rel="noopener noreferrer">Centre des Matériaux (UMR 7633)</a>, CNRS / Mines Paris – PSL · France</p>
-              <div class="experience-marks">
-                <a class="experience-mark experience-mark--cdm" href="https://www.minesparis.psl.eu/cmat/" target="_blank" rel="noopener noreferrer" aria-label="Visit Centre des Matériaux">
-                  <img src="assets/cdm-logo.png" alt="Centre des Matériaux" width="1024" height="143">
-                </a>
-              </div>
-            </div>
-          </article>
+          </div>
         </div>
-      </section>
-
-      <section class="content-section" id="education">
-        <h2>Education</h2>
-        <div class="entry-list">
-          <article class="entry">
-            <span class="date">2026–Present</span>
-            <div><h3>Peking University</h3><p>Ph.D. Student in Solid Mechanics · Supervisor: Prof. Yin Zhang</p></div>
-          </article>
-          <article class="entry">
-            <span class="date">2025–2026</span>
-            <div><h3>Shanghai Jiao Tong University</h3><p>M.S. in Mechanical Engineering · Supervisor: Prof. Qiwei Shi</p></div>
-          </article>
-          <article class="entry">
-            <span class="date">2023–2025</span>
-            <div><h3>Mines Paris – PSL</h3><p>Diplôme d’Ingénieur (equivalent to M.S.) in Civil Engineering</p></div>
-          </article>
-          <article class="entry">
-            <span class="date">2019–2023</span>
-            <div><h3>Shanghai Jiao Tong University</h3><p>B.S. in Mechanical Engineering · Graduated with distinction</p></div>
-          </article>
-        </div>
+        <figure class="experience-map">
+          <img src="assets/sino-european-map.png" alt="Map of France and China marking the cities where I have studied and worked: Paris, Évry-Courcouronnes, Montargis, Sophia Antipolis, Beijing, and Shanghai">
+        </figure>
       </section>
 <!--      <section class="content-section" id="activities">
         <h2>Academic Activities &amp; Honors</h2>
@@ -838,14 +931,14 @@
       </li>
 
       <li>
-        Academic visit to the University of Pennsylvania,
-        Department of Mechanical Engineering and Applied Mechanics,
-        December 2023
+        Conference contribution at the Alloys for Additive
+        Manufacturing Symposium 2024
       </li>
 
       <li>
-        Conference contribution at the Alloys for Additive
-        Manufacturing Symposium 2024
+        Academic visit to the University of Pennsylvania,
+        Department of Mechanical Engineering and Applied Mechanics,
+        December 2023
       </li>
     </ul>
   </div>
@@ -864,6 +957,10 @@
       <section class="content-section" id="contact">
         <h2>Contact</h2>
         <p>For research discussions or collaboration, please contact me at <a href="mailto:wukaiwei26@stu.pku.edu.cn">wukaiwei26@stu.pku.edu.cn</a>.</p>
+        <div class="subsection">
+          <h3>Academic Genealogy</h3>
+          <p>My academic lineage — see my <a href="genealogy.html">academic genealogy</a>.</p>
+        </div>
       </section>
     </main>
   </div>
